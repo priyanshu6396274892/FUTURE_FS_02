@@ -1,0 +1,360 @@
+/* Body fix taaki content center mein rahe */
+body {
+  font-family: "Inter", sans-serif;
+  background: #1d1e22;
+  color: #d4d4dc;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login Box */
+.auth-box {
+  background: #25262a;
+  padding: 40px;
+  border-radius: 20px;
+  width: 350px;
+  border-top: 8px solid #feda6a;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Dashboard Container */
+.crm-container {
+  width: 90%;
+  max-width: 1100px;
+  background: linear-gradient(180deg, #393f4d 0%, #1d1e22 100%);
+  padding: 30px;
+  border-radius: 24px;
+  display: none;
+}
+
+/* Baki purana CSS yahan niche paste karo... */
+
+.crm-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  border-top-color: #d4d4dc;
+}
+
+h1 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 900;
+  margin: 0 0 30px 0;
+  color: #feda6a;
+}
+
+.stat-card {
+  background: #1d1e22;
+  border: 1px solid #393f4d;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.stat-title {
+  color: #d4d4dc;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.stat-number {
+  color: #feda6a;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+#leadForm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: flex-end;
+  background: #393f4d;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  color: #d4d4dc;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+#leadForm input,
+#leadForm select {
+  padding: 14px;
+  border: 2px solid #1d1e22;
+  border-radius: 8px;
+  background: #1d1e22;
+  color: #d4d4dc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#leadForm input:focus {
+  border-color: #feda6a;
+  outline: none;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #feda6a, #ffc107);
+  color: #1d1e22;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background-color: #c2c1bc;
+}
+
+/* --- FIX: Table Scrolling Logic --- */
+.table-responsive {
+  border: 1px solid #393f4d;
+  border-radius: 12px;
+  max-height: 400px; /* Data badhne par scroll bar aayega */
+  overflow-y: auto;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  position: sticky; /* Scroll ke waqt header fix rahega */
+  top: 0;
+  background-color: #393f4d;
+  color: #feda6a;
+  padding: 16px;
+  text-transform: uppercase;
+  font-size: 12px;
+  z-index: 10;
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid #1d1e22;
+  color: #d4d4dc;
+}
+
+table tbody tr:hover {
+  background: #393f4d;
+}
+
+.status-badge {
+  background: linear-gradient(90deg, #feda6a, #ffc107);
+  color: #1d1e22;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.delete-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
+/* Status Dropdown Design */
+.status-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #1e1e2e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Status ke hisab se rang (Optional, extra touch ke liye) */
+.status-select option[value="New"] {
+  color: #3498db;
+}
+.status-select option[value="Contacted"] {
+  color: #f1c40f;
+}
+.status-select option[value="Converted"] {
+  color: #2ecc71;
+}
+
+.status-select:hover {
+  border-color: #6366f1;
+}
+
+/* Delete Button ki styling */
+.delete-btn {
+  padding: 8px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background-color: #e63946;
+}
+#filterStatus {
+  width: 100%;
+  max-width: 200px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #1d1e22;
+  color: #feda6a;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+  appearance: none; /* Default arrow hatane ke liye */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23feda6a%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 12px;
+}
+
+#filterStatus:hover {
+  border-color: #feda6a;
+}
+/* Status ka visual color */
+.status-select {
+  font-weight: bold;
+}
+.status-select option[value="New"] {
+  color: #3498db;
+} /* Blue */
+.status-select option[value="Contacted"] {
+  color: #f1c40f;
+} /* Yellow */
+.status-select option[value="Converted"] {
+  color: #2ecc71;
+} /* Green */
+/* Modal Background */
+.modal {
+  display: none; /* Default hidden */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  backdrop-filter: blur(4px); /* Professional blur effect */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: #1d1e22;
+  margin: 10% auto;
+  padding: 25px;
+  border: 1px solid #393f4d;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  color: #d4d4dc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  color: #feda6a;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+/* Textarea Styling */
+#noteInput {
+  width: 100%;
+  height: 100px;
+  margin: 15px 0;
+  padding: 10px;
+  background: #393f4d;
+  border: 1px solid #1d1e22;
+  border-radius: 8px;
+  color: white;
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* Notes List Styling */
+#notesList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#notesList li {
+  background: #393f4d;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  border-left: 4px solid #feda6a;
+}
+/* Purana .crm-container rehne do, par ye naya add karo */
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+  background: #25262a;
+  padding: 40px;
+  border-radius: 20px;
+  border-top: 8px solid #feda6a;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Dashboard ko hide karo by default */
+#dashboard {
+  display: none;
+}
+#authContainer input {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 10px 0;
+  border: 2px solid #393f4d;
+  border-radius: 12px;
+  background: #1d1e22;
+  color: #ffffff;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+#authContainer input::placeholder {
+  color: #8b8d97;
+}
+
+#authContainer input:focus {
+  outline: none;
+  border-color: #feda6a;
+  box-shadow: 0 0 12px rgba(254, 218, 106, 0.4);
+  transform: translateY(-2px);
+}

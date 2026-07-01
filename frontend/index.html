@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium CRM Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="authContainer" class="auth-box">
+        <h2 id="authTitle" style="color: #feda6a;">Login</h2>
+        <input type="email" id="authEmail" placeholder="Email" />
+        <input type="password" id="authPass" placeholder="Password" />
+        <button onclick="handleAuth()" class="submit-btn" style="width: 100%;">Submit</button>
+        <p onclick="toggleAuth()" style="cursor: pointer; color: #feda6a; margin-top: 15px; text-align: center;">
+            Switch to <span id="authToggleText">Signup</span>
+        </p>
+    </div>
+
+    <div id="dashboard" class="crm-container">
+        <h1>Client Lead Management System</h1>
+
+        <div class="stats-counter-container">
+            <div class="stat-card">
+                <span class="stat-title">Total Leads</span>
+                <span class="stat-number" id="totalLeadsCount">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Active Status</span>
+                <span class="stat-number" id="activeLeadsCount">0</span>
+            </div>
+        </div>
+
+        <form id="leadForm">
+            <div class="input-group">
+                <label for="name">Client Name</label>
+                <input type="text" id="name" placeholder="E.g. Rahul Sharma" required />
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="rahul@example.com" required />
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="input-group">
+                <label for="source">Lead Source</label>
+                <select id="source" required>
+                    <option value="Google">Google Search</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Website">Direct Website</option>
+                    <option value="Referral">Friend/Referral</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Add Lead</button>
+        </form>
+
+        <select id="filterStatus" onchange="filterLeads()">
+            <option value="All">All Leads</option>
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Converted">Converted</option>
+        </select>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th><th>Email</th><th>Phone</th><th>Source</th><th>Submitted On</th><th>Status</th><th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="leadsTableBody"></tbody>
+            </table>
+        </div>
+
+        <div id="notesModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Client Notes</h3>
+                <textarea id="noteInput" placeholder="Add a follow-up note..."></textarea>
+                <button onclick="saveNote()" class="submit-btn">Save Note</button>
+                <ul id="notesList"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
